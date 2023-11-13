@@ -7,10 +7,11 @@ dropDownBtn.addEventListener('click', () => {
 })
 for(let i = 0; i < listArray.length; i++){
     listArray[i].addEventListener('click', () => {
-        console.log(listArray[i].textContent);
         dropDownBtn.textContent = listArray[i].textContent;
+        dropDownList.classList.remove('dropdown__list_active');
     })
 }
+
  
 
 
