@@ -1,12 +1,13 @@
 const rotatorCase = document.querySelectorAll('.rotator__case');
-const para = document.querySelector('div.card p');
-console.log(rotatorCase);
+const bookContent = document.querySelector('div.card');
 
 function getIndex(){
-    let index = Math.floor(Math.random() * rotatorCase.length);
-    if(!rotatorCase[index].classList.contains('.rotator__case_active')) {
-       rotatorCase[index].classList.add('.rotator__case_active');
+    for(let i = 0; i < rotatorCase.length; i++) {
+        rotatorCase[i].classList.remove('rotator__case_active');
     }
-    
+    let index = Math.floor(Math.random() * rotatorCase.length);
+       rotatorCase[index].classList.add('rotator__case_active');
+       rotatorCase[index].style.color =  rotatorCase[index].dataset.color;
+       
 }
-getIndex();
+setInterval(() => getIndex(), 1000);

@@ -6,8 +6,9 @@ dropDownBtn.addEventListener('click', () => {
     dropDownList.classList.add('dropdown__list_active');
 })
 for(let i = 0; i < listArray.length; i++){
-    listArray[i].addEventListener('click', () => {
+    listArray[i].addEventListener('click', (e) => {
         dropDownBtn.textContent = listArray[i].textContent;
+        e.preventDefault();
         dropDownList.classList.remove('dropdown__list_active');
     })
 }
